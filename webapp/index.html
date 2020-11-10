@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="/qrcode-generator-master/js/qrcode.js"></script>
 </head>
 <body>
-    Web app--
+    <div id="placeHolder"></div>
+    <script type="text/javascript">
+        var typeNumber = 4;
+        var errorCorrectionLevel = 'L';
+        var qr = qrcode(typeNumber, errorCorrectionLevel);
+        qr.addData('Hi!');
+        qr.make();
+        document.getElementById('placeHolder').innerHTML = qr.createImgTag();
+    
+    </script>
 </body>
 </html>
